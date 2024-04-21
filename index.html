@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookWorm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ddd;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .book {
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        .book img {
+            width: 100%;
+            height: auto;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        @media (max-width: 600px) {
+            .book-container {
+                flex-direction: column;
+            }
+        }
+        /* Search bar */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .search-input {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BookWorm</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Sign Up</a>
+    </nav>
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search for books...">
+    </div>
+    <div class="book-container">
+        <!-- Example book -->
+        <div class="book">
+            <img src="book-cover.jpg" alt="Book Cover">
+            <h2>Book Title</h2>
+            <p>Author Name</p>
+            <p>Brief Description</p>
+            <button onclick="showDetails()">More Details</button>
+            <button onclick="addToCart()">Add to Cart</button>
+            <button onclick="purchase()">Purchase</button>
+        </div>
+        <!-- Repeat for more books -->
+    </div>
+    <footer>
+        <p>&copy; 2023 BookWorm. All rights reserved.</p>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+    </footer>
+    <script>
+        function showDetails() {
+            alert("More details about the book will be displayed here.");
+        }
+        function addToCart() {
+            alert("This book has been added to your cart.");
+        }
+        function purchase() {
+            alert("You will be redirected to the purchase page.");
+        }
+        // Example of handling search input
+        document.querySelector('.search-input').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                alert("Searching for: " + this.value);
+                // Implement search functionality here
+            }
+        });
+    </script>
+</body>
+</html>
